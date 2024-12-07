@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adjustable Element</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/78f2a34a78.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- longdo map -->
+    <script src="https://api.longdo.com/map/?key={Normaly is my longdo key it a secret}"></script>
+    <script src="./script.js"></script>
+    <style>
+        #container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border: 1px solid #000;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: relative;
+            height: 100vh;
+            overflow-y: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="popup" id="popup">
+            <div class="editBox" id="editBox">
+                <p class="title" id="title">EDIT HOTEL INFORMATION</p>
+                <div class="in-p" id="in-p-id">
+                    <label for="location_id">LOCATION ID</label>
+                    <input type="text" name="location_id" id="location_id" required>
+                </div>
+                <div class="in-p">
+                    <label for="name">HOTEL NAME</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div class="in-p">
+                    <div class="group">
+                        <label for="street1">STREET 1</label>
+                        <input type="text" name="street1" id="street1">
+                    </div>
+                    <div class="group">
+                        <label for="city">CITY</label>
+                        <input type="text" name="city" id="city">
+                    </div>
+                </div>
+                <div class="in-p">
+                    <div class="group">
+                        <label for="country">COUNTRY</label>
+                        <input type="text" name="country" id="country">
+                    </div>
+                    <div class="group">
+                        <label for="state">STATE</label>
+                        <input type="text" name="state" id="state">
+                    </div>
+                    <div class="group">
+                        <label for="postalcode">POSTAL CODE</label>
+                        <input type="text" name="postalcode" id="postalcode">
+                    </div>
+                </div>
+                <div class="in-p">
+                    <div class="group">
+                        <label for="latitude">LATITUDE</label>
+                        <input type="text" name="latitude" id="latitude">
+                    </div>
+                    <div class="group">
+                        <label for="longitude">LONGITUDE</label>
+                        <input type="text" name="longitude" id="longitude">
+                    </div>
+                </div>
+                <div class="in-p" style="width: 100px;">
+                    <label for="rating">Rating</label>
+                    <input type="text" name="rating" id="rating">
+                </div>
+                <div class="btn-group">
+                    <div class="btn-dis">
+                        <button style="cursor: pointer;" onclick="closePopup()">Discard</button>
+                    </div>
+                    <div class="btn-save" id="btn-new"><button onclick="saveNew()">New</button></div>
+                    <div class="btn-save" id="btn-edit"><button onclick="saveEdit()">Save</button></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wep" id="wep">
+            <div class="rou">
+                <div class="top">
+                    <div class="title">
+                        <h1>Tripadvisor</h1>
+                    </div>
+                    <div class="search-warp">
+                        <div class="search">
+                            <input type="text" name="" id="search" placeholder="search" onkeyup="loadQueayBySearh()"> <i
+                                class="fas fa-search"></i>
+                        </div>
+                    </div>
+                    <div class="profile" id="profile">
+
+                    </div>
+                </div>
+                <div class="warp-table">
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th rowspan="2">Location ID</th>
+                                <th rowspan="2">Name</th>
+                                <th style="border-bottom: 1px solid #5CBAFF;" colspan="5">Address</th>
+                                <th rowspan="2">Latitude</th>
+                                <th rowspan="2">Longitude</th>
+                                <th rowspan="2">Rating</th>
+                                <th rowspan="2">Tool</th>
+                            </tr>
+                            <tr class="sub-obj">
+                                <th>street1</th>
+                                <th>country</th>
+                                <th>state</th>
+                                <th>city</th>
+                                <th>postalcode</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tb">
+                            <tr>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="drag">
+            <div id="map" style="height: 100%;"></div>
+            <button id="adjustButton">^</button>
+        </div>
+
+    </div>
+
+    <script>
+
+
+    </script>
+
+</body>
+
+</html>
